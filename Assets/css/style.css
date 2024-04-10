@@ -1,0 +1,104 @@
+body {
+    margin: 0px;
+    background-color: floralwhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header {
+    padding: 10px;
+    background-color: coral;
+}
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.home_title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+.navigation {
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+}
+.navigation li {
+    list-style-type: none;
+}
+.navigation a {
+    display: block;
+    min-width: 150px;
+    margin: 0.5rem;               /* Marges externes (1 valeurs = 4 directions) */
+    padding: 0.4rem 0;            /* Marges internes (2 valeurs = haut/bas et gauche/droite)*/
+    text-align: center;           /* Centrage du texte */   
+    background-color: black;    /* Couleur d'arrière-plan */
+    color: #fff;                  /* Couleur du texte */
+    text-decoration: none;        /* Suppression du soulignement */
+    border: 1px solid #fff;       /* Ajout d'une bordure */
+    border-radius: 4px;           /* Arrondis des bordures */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.navigation a:hover {
+    background-color:white;
+    color: black;
+    border-color: black;
+}
+.promo {
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: beige;
+}
+.promo-texte {
+    text-align: left;
+    padding: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.promo-texte H1 {
+    font-size: 34px;
+    font-weight: bold;
+    color: coral;
+}
+.button a {
+    display: block;   
+    width: 150px;
+    padding: 0.5rem 0;
+    text-align: center;   
+    background-color: black;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+ .button a:hover {
+    background-color:white;
+    color: black;
+    border-color: black;
+}
+  .content {
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+.content-texte {
+    text-align: left;
+    padding: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+H1 {
+    font-size: 34px;
+    font-weight: bold;
+    color:black;
+}
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color:#1d1d1b;
+}
