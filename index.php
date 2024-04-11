@@ -1,4 +1,7 @@
-<?php 
+<?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
 
     require_once("Config/connectDataBase.php");
     require_once("Controllers/indexController.php");
