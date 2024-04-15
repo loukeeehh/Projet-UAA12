@@ -34,6 +34,7 @@ elseif ($uri === "/deconnexion") {
 
 elseif ($uri === "/inscription") {
     if (isset($_POST['btnEnvoi'])) {
+
         $messageError = verifEmptyData();
 
         if (!$messageError) {
@@ -56,6 +57,7 @@ elseif ($uri === "/rendezVous") {
 }
 
 else if ($uri === "/updateProfil") {
+    
     $title = "Mise à jour du profil";
     $template = "Views/Users/inscriptionOrEditProfile.php";
     require_once("Views/base.php");
