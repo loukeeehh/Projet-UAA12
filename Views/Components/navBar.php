@@ -7,7 +7,7 @@
                     <li><a href="complexes">Nos centres</a></li>
                     <li><a href="inscription">Créer un compte</a></li>
                     <li><a href="connexion">Connexion</a></li>
-                    <li><a href="deconnexion">Déconnexion</a></li>
+                    <li><a href="deconnexion">Déconnexion</a></li> 
                 </ul>
             </div>
         </div>

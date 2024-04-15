@@ -57,6 +57,20 @@ elseif ($uri === "/rendezVous") {
 }
 
 else if ($uri === "/updateProfil") {
+    if (isset($_POST['btenEnvoi'])) {
+
+        $messageError = verifEmptyData();
+
+        if (!$messageError) {
+
+            updateUser($pdo);
+
+            updateSession($pdo);
+
+            header('location:/profil');
+
+        }
+    }
     
     $title = "Mise à jour du profil";
     $template = "Views/Users/inscriptionOrEditProfile.php";
