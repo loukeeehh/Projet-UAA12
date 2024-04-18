@@ -10,10 +10,10 @@ function createUser($pdo)
 
         $ajouteUser->execute([
             'nomUser' => $_POST["nom"],
-            'prenomUser' => $_POST["prénom"],
+            'prenomUser' => $_POST["prenom"],
             'loginUser' => $_POST["login"],
-            'genreUser' => $_POST["Genre"],
-            'bornUser' => $_POST["Date_de_naissance"],
+            'genreUser' => $_POST["genre"],
+            'bornUser' => $_POST["date_de_naissance"],
             'mailUser' => $_POST["email"],
             'passWordUser' => $_POST["mot_de_passe"]
         ]);
@@ -49,26 +49,6 @@ function connectUser($pdo)
     }
 }
 
-function verifEmptyData()
-{
-    // parcours du tableau $_POST en recherchant les éléments vides ou munis d'espaces
-    foreach ($_POST as $key => $value) {
-
-        //str-replace remplace une chaine par une autre dans une chaine de caractères donnée, ici un espace par le vide dans $value.
-        if (empty(str_replace(' ', '', $value))) {
-
-            //on remplit un tableau associatif $messageError dont les clés sont les noms des champs avec un message rappelant que le champs concerné est vide.
-            $messageError[$key] = "Votre" . $key . " est vide.";
-        }
-    }
-
-    // si le tableau $messageError est vide, on renverra false, sinon, on renvoie le tableau
-    if (isset($messageError)) {
-        return $messageError;
-    } else {
-        return false;
-    }
-}
 
 function updateUser($pdo) 
 {

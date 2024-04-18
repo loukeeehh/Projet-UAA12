@@ -1,5 +1,27 @@
 <?php
 
+function verifEmptyData()
+{
+    // parcours du tableau $_POST en recherchant les éléments vides ou munis d'espaces
+    foreach ($_POST as $key => $value) {
+
+        //str-replace remplace une chaine par une autre dans une chaine de caractères donnée, ici un espace par le vide dans $value.
+        if (empty(str_replace(' ', '', $value))) {
+
+            //on remplit un tableau associatif $messageError dont les clés sont les noms des champs avec un message rappelant que le champs concerné est vide.
+            $messageError[$key] = "Votre" . $key . " est vide.";
+        }
+    }
+
+    // si le tableau $messageError est vide, on renverra false, sinon, on renvoie le tableau
+    if (isset($messageError)) {
+        return $messageError;
+    } else {
+        return false;
+    }
+}
+
+require_once("Models/userModel.php");
 $uri = $_SERVER["REQUEST_URI"];
 var_dump($uri);
 
@@ -35,9 +57,11 @@ elseif ($uri === "/deconnexion") {
 elseif ($uri === "/inscription") {
     if (isset($_POST['btnEnvoi'])) {
 
+        var_dump($_POST);
         $messageError = verifEmptyData();
 
         if (!$messageError) {
+            
             createUser($pdo);
 
                 header('location:/connnexion');
