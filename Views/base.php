@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../Assets/css/connexion.css">
     <link rel="stylesheet" href="../Assets/css/inscription.css">
     <link rel="stylesheet" href="../Assets/css/complexes.css">
-    <link rel="stylesheet" href="Assets/css/rendezVous.css">
+    <link rel="stylesheet" href="../Assets/css/rendezVous.css">
 
     <title><?= $title ?></title>
 </head>

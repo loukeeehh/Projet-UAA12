@@ -47,6 +47,29 @@ if($uri === "/connexion") {
 
 }
 
+if($uri === "/profil") {
+
+    if (isset($_POST['btnEnvoi'])) {
+
+        $erreur = false;
+
+        if (connectUser($pdo)) {
+
+            header("location:/");
+            
+        }
+
+        else {
+            $erreur = true;
+        }
+    }
+    
+        $title = "Votre profil";
+        $template = "Views/Users/profil.php";
+        require_once("Views/base.php");
+
+}
+
 elseif ($uri === "/deconnexion") {
 
     session_destroy();
@@ -55,7 +78,9 @@ elseif ($uri === "/deconnexion") {
 }
 
 elseif ($uri === "/inscription") {
-    if (isset($_POST['btnEnvoi'])) {
+
+    if (isset($_POST['btnEnvoi'])) 
+    {
 
         var_dump($_POST);
         $messageError = verifEmptyData();
@@ -64,7 +89,7 @@ elseif ($uri === "/inscription") {
             
             createUser($pdo);
 
-                header('location:/connnexion');
+                header('location:/connexion');
         }
     }
     
@@ -72,14 +97,7 @@ elseif ($uri === "/inscription") {
     $template = "views/users/inscriptionOrEditProfile.php";
     require_once("views/base.php"); // appel de la page qui sera remplie avec la vue demandée
 }
-
-elseif ($uri === "/rendezVous") {
-    
-    $title = "Prendre rendez-vous";
-    $template = "Views/Users/rendezVous.php";
-    require_once("Views/base.php");
-}
-
+ 
 else if ($uri === "/updateProfil") {
     if (isset($_POST['btenEnvoi'])) {
 
@@ -100,6 +118,14 @@ else if ($uri === "/updateProfil") {
     $template = "Views/Users/inscriptionOrEditProfile.php";
     require_once("Views/base.php");
 }
+
+else if ($uri === "/deleteProfil") {
+    
+    deleteUser($pdo);
+    header("location:/deconnexion");
+}
+
+
 
 
 

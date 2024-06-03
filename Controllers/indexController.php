@@ -8,7 +8,7 @@
 
     if ($uri === "/index.php" || $uri === "/") {
 
-        $complexes = selectAllComplexes($pdo);
+        //$complexes = selectAllComplexes($pdo);
        
         $title = "Page d'accueil";
         $template = "views/pageAccueil.php";

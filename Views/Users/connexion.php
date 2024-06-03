@@ -1,29 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+
+
 
     <div class="connexion">
+        <form method = "post" action="">
     <div>
         <p><label for="Login">Se connecter</label>
-        <input type="login"></p>
+        <input type="login" name = "login" <?php if (isset($_SESSION['user'])) : ?> value="<?= $_SESSION['user']->loginUser ?> " <?php endif ?>></p>
     </div>
     
     <div>
     <p><label for="PassWord">Mot de passe</label>
-        <input type="password"></p>
+        <input type="password" name = "mot_de_passe" <?php if (isset($_SESSION['user'])) : ?> value="<?= $_SESSION['user']->passwordUser ?> " <?php endif ?>></p>
     </div>
 
     <div>
-        <button type="submit">Valider</button>
+        <button type="submit" name="btnEnvoi" value="Envoi">Valider</button>
     </div>
-    
+    </form>
     <p>Pas encore de compte ? <a href="inscription">Créer un compte</a></p>
-
+   
     </div>
 
-</body>
-</html>

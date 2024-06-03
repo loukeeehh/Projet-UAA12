@@ -1,4 +1,4 @@
-<body>
+
 
     <div class="inscription">
         <form method="post" action="">
@@ -25,17 +25,17 @@
                 <div>
                     <p><label for="genre">Votre genre :</label>
 
-                        <input type="radio" id="Masculin" name="genre" value="Masculin">
+                        <input type="radio" id="Masculin" name="genre" value="M">
                         <label for="Masculin">Masculin</label>
 
-                        <input type="radio" id="Feminin" name="genre" value="Féminin">
+                        <input type="radio" id="Feminin" name="genre" value="F">
                         <label for="Feminin">Féminin</label>
                     </p>
                 </div>
 
                 <div>
                     <p><label for="date de naissance">Votre date de naissance :</label>
-                        <input type="date" placeholder="date" id="date_de_naissance" name="date_de_naissance" required <?php if (isset($_SESSION['user'])) : ?> value="<?= $_SESSION['user']->bornUser ?> " <?php endif ?>>
+                        <input type="date" placeholder="date" id="date_de_naissance" name="date_de_naissance"  required <?php if (isset($_SESSION['user'])) : ?> value="<?= $_SESSION['user']->bornUser ?> " <?php endif ?>>
                     </p>
                 </div>
 
@@ -52,19 +52,12 @@
                 </div>
 
                 <div>
-                    <p><label for="mot de passe">Confirmer votre mot de passe :</label>
-                        <input type="password" placeholder="mot_de_passe" id="checkmot_de_passe" name="checkmot_de_passe" required <?php if (isset($_SESSION['user'])) : ?> value="<?= $_SESSION['user']->passwordUser ?> " <?php endif ?>>
-                    </p>
-                </div>
-
-                <div>
                     <p><button type="submit" name="btnEnvoi" value="Envoi">Valider</button></p>
                 </div>
+
             </div>
         </form>    
 
     </div>
 
-</body>
 
-</html>

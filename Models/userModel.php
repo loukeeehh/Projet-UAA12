@@ -3,8 +3,8 @@
 function createUser($pdo)
 {
     try {
-        $query = 'insert into user(nomUser, prenomUser, loginUser, genreUser, bornUser, mailUser, passWordUser)
-        values (:nomUser, :prenomUser, :loginUser, :genreUser, bornUser, :mailUser, :passWordUser)';
+        $query = 'INSERT INTO user(nomUser, prenomUser, loginUser, genreUser, bornUser, mailUser, passWordUser)
+        VALUES (:nomUser, :prenomUser, :loginUser, :genreUser, :bornUser, :mailUser, :passWordUser)';
 
         $ajouteUser = $pdo->prepare($query);
 
@@ -54,13 +54,15 @@ function updateUser($pdo)
 {
 
     try {
-        $query = 'update user set nomUser = :nomUser, prenomUser = :prenomUser, passwordUser = :passwordUser, mailUser = :mailUser where id = :id';
+        $query = 'update user set nomUser = :nomUser, prenomUser = :prenomUser, genreUser = :genreUser, bornUser = :bornUser, passwordUser = :passwordUser, mailUser = :mailUser where userID = :userID';
 
         $ajouteUser = $pdo-> prepare($query);
 
         $ajouteUser-> execute([
             'nomUser' => $_POST["nom"],
             'prenomUser' => $_POST["prenom"],
+            'genreUser' => $_POST["genre"],
+            'bornUser' => $_POST["date_de_naissance"],
             'passwordUser' => $_POST["mot_de_passe"],
             'mailUser' => $_POST["email"],
             'id' => $_SESSION["user"]-> id
@@ -89,3 +91,18 @@ function updateSession($pdo)
         die($message);
     }
 } 
+
+function deleteUser ($pdo)
+{
+    try {
+        $query = 'delete from user where userID = :userID';
+        $delUser = $pdo->prepare($query);
+        $delUser->execute([
+            'userID' => $_SESSION["user"]-> userID
+        ]);
+
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}
